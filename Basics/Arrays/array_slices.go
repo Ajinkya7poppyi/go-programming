@@ -8,9 +8,11 @@ var listPeople [peopleCap]string
 var slicePeople []string
 var peopleLength int = 0
 
-func addPersonToSlice(name string) {
+func addPersonToSlice(name ...string) {
 	fmt.Println("Capacity of Slice List is ", cap(slicePeople))
-	slicePeople = append(slicePeople, name)
+	for _, i := range name {
+		slicePeople = append(slicePeople, i)
+	}
 }
 
 func getSliceListPersons() {
@@ -45,12 +47,7 @@ func main() {
 	addPerson("PersonF")
 	addPerson("PersonF")
 	getListPersons()
-	addPersonToSlice("PersonA")
-	addPersonToSlice("PersonB")
-	addPersonToSlice("PersonC")
-	addPersonToSlice("PersonD")
-	addPersonToSlice("PersonE")
-	addPersonToSlice("PersonF")
-	addPersonToSlice("PersonG")
+	addPersonToSlice("PersonA", "PersonB", "PersonC")
+	addPersonToSlice("PersonD", "PersonE", "PersonF", "PersonG")
 	getSliceListPersons()
 }
