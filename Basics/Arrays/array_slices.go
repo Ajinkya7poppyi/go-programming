@@ -17,8 +17,8 @@ func addPersonToSlice(name ...string) {
 
 func getSliceListPersons() {
 	fmt.Println("SliceList of People registered is as follows:")
-	for i := 0; i < len(slicePeople); i++ {
-		fmt.Println(slicePeople[i])
+	for _, i := range slicePeople {
+		fmt.Println(i)
 	}
 }
 
